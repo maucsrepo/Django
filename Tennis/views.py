@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from Tennis.helpers import extractor
-from Tennis.helpers import populators
 
 
 def homepage(request):
@@ -14,7 +13,6 @@ def index(request):
 
 
 def players(request):
-    populators.populate('http://www.scorespro.com/tennis/tournaments/')
     return render(request, 'Tennis/players.html')
 
 
