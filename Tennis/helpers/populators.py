@@ -2,12 +2,13 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from Tennis.models import Tournament
 import datetime
-from django.conf import settings
+from ScoresPro import settings
 
 
 def open_driver():
     try:
-        driver = webdriver.Chrome(executable_path='chromedriver.exe')
+        driver = webdriver.Chrome(executable_path=settings.PHANTOM_JS)
+
     except:
         print('The driver could not be loaded')
     else:
@@ -52,5 +53,8 @@ def populate(url):
     except ConnectionError:
         print("Could not load Driver")
 
+
+def get_games():
+    return 0
 
 
